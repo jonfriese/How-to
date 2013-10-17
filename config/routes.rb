@@ -1,5 +1,5 @@
 Howto::Application.routes.draw do
-
+  root :to =>"tutorials#index"
 
   resources :tutorials do
     resources :steps
