@@ -4,30 +4,30 @@ class StepsController < ApplicationController
   before_filter :load_tutorial
 
   def index
-    @steps = Step.all
+    @steps = @tutorial.steps.all
   end
 
   # GET /steps/1
   # GET /steps/1.json
   def show
-    @step = Step.find(params[:id])
+    @step = @tutorial.steps.find(params[:id])
   end
 
   # GET /steps/new
   # GET /steps/new.json
   def new
-    @step = Step.new
+    @step = @tutorial.steps.new
   end
 
   # GET /steps/1/edit
   def edit
-    @step = Step.find(params[:id])
+    @step = @tutorial.steps.find(params[:id])
   end
 
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(params[:id])
+    @step = @tutorial.steps.new(params[:id])
 
     respond_to do |format|
       if @step.save
@@ -43,7 +43,7 @@ class StepsController < ApplicationController
   # PUT /steps/1
   # PUT /steps/1.json
   def update
-    @step = Step.find(params[:id])
+    @step = @tutorial.steps.find(params[:id])
 
     respond_to do |format|
       if @step.update_attributes(params[:step])
@@ -59,7 +59,7 @@ class StepsController < ApplicationController
   # DELETE /steps/1
   # DELETE /steps/1.json
   def destroy
-    @step = Step.find(params[:id])
+    @step = @tutorial.steps.find(params[:id])
     @step.destroy
 
     respond_to do |format|
