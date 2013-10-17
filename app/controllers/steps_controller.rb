@@ -68,6 +68,8 @@ class StepsController < ApplicationController
     end
   end
 
+  private
+
   def load_tutorial
     @tutorial = Tutorial.find(params[:tutorial_id])
   end
