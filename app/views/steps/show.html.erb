@@ -5,11 +5,6 @@
   <%= @step.list %>
 </p>
 
-<p>
-  <b>Parent:</b>
-  <%= @step.parent_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_tutorial_step_path(@tutorial, @step) %> |
 <%= link_to 'Back', tutorial_steps_path(@tutorial) %>

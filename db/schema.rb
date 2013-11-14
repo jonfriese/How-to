@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017020726) do
+ActiveRecord::Schema.define(:version => 20131020052332) do
 
   create_table "steps", :force => true do |t|
     t.string   "list"
-    t.integer  "parent_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "tutorial_id"
   end
 
   create_table "tutorials", :force => true do |t|

@@ -8,10 +8,9 @@
     <th></th>
   </tr>
 
-<% @steps.each do |step| %>
+<% @step.each do |step| %>
   <tr>
     <td><%= step.list %></td>
-    <td><%= step.parent_id %></td>
     <td><%= link_to 'Show', tutorial_step_path(@tutorial, step) %></td>
     <td><%= link_to 'Edit', edit_tutorial_step_path(@tutorial, step) %></td>
     <td><%= link_to 'Destroy', [@tutorial, step], method: :delete, data: { confirm: 'Are you sure?' } %></td>

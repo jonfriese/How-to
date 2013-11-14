@@ -1,18 +1,13 @@
 <h1>Tutorials</h1>
 
 <br />
-<table>
-<% @tutorials.each do |tutorial| %>
-  <tr>
-    <td><b><%= tutorial.list %></b></td>
-    <td><%= link_to 'Steps', tutorial_steps_path(tutorial) %></td>
-    <td><%= link_to 'Edit', edit_tutorial_path(tutorial) %></td>
-    <td><%= link_to 'Destroy', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-<br />
+<%= link_to 'New Tutorial', new_tutorial_path, id: "new_list", remote: true %>
 
-<%= link_to 'New Tutorial', new_tutorial_path %>
+<div id="all_lists">
+  <%= render @tutorials %>
+<div>
+
+
+
+

@@ -3,11 +3,6 @@ class TutorialsController < ApplicationController
   # GET /tutorials.json
   def index
     @tutorials = Tutorial.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tutorials }
-    end
   end
 
   # GET /tutorials/1
@@ -25,11 +20,6 @@ class TutorialsController < ApplicationController
   # GET /tutorials/new.json
   def new
     @tutorial = Tutorial.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @tutorial }
-    end
   end
 
   # GET /tutorials/1/edit
@@ -40,16 +30,10 @@ class TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-    @tutorial = Tutorial.new(params[:tutorial])
-
+    @tutorial = Tutorial.create!(params[:tutorial])
     respond_to do |format|
-      if @tutorial.save
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully created.' }
-        format.json { render json: @tutorial, status: :created, location: @tutorial }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @tutorial.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to tutorials_url }
+      format.js
     end
   end
 
