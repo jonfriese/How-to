@@ -4,7 +4,7 @@ class StepsController < ApplicationController
   before_filter :load_tutorial
 
   def index
-    @step = @tutorial.steps.all
+    @steps = @tutorial.steps.all
   end
 
   # GET /steps/1
@@ -27,11 +27,10 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    @step = @tutorial.steps.new(params[:id])
-    @step.tutorial_id = @tutorial.id
+    @step = @tutorial.steps.new(params[:step])
 
     respond_to do |format|
-      if @step.update_attributes(params[:tutorial])
+      if @step.save
         format.html { redirect_to [@tutorial, @step], notice: 'Step was successfully created.' }
         format.json { render json: @step, status: :created, location: @step }
       else

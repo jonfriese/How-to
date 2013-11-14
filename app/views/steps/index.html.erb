@@ -8,7 +8,7 @@
     <th></th>
   </tr>
 
-<% @step.each do |step| %>
+<% @steps.each do |step| %>
   <tr>
     <td><%= step.list %></td>
     <td><%= link_to 'Show', tutorial_step_path(@tutorial, step) %></td>
